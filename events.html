@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Events - EvWo</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto|Roboto+Condensed&display=swap"
+        rel="stylesheet">
+
+    <style type="text/css">
+        .flexExpand {
+            flex: 1;
+        }
+
+        h1 {
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        input[type=text] {
+            padding: 0.5em;
+        }
+
+        .button {
+            letter-spacing: 0.13em;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            padding: 0.75em;
+            border-radius: 0.25em;
+            text-decoration: none;
+            color: inherit;
+            text-transform: uppercase;
+            color: #214B24;
+        }
+
+        .button:hover {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+
+        .button.outlined {
+            border: 1px solid rgba(0, 0, 0, 0.5);
+        }
+
+        .button.primary {
+            background-color: #214B24;
+            color: white;
+        }
+
+        .button.disabled {
+            color: rgba(0, 0, 0, 0.35)
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto Condensed', sans-serif;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            font-size: small;
+        }
+
+        header {
+            background-color: #214B24;
+            color: white;
+            padding: 0.5em 0.5rem;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            margin: 0;
+            margin-left: 0.25em;
+        }
+
+        header .button {
+            color: white;
+        }
+
+        main {
+            padding: 0.5em 0.5rem;
+            height: 100%;
+        }
+
+        footer {
+            padding: 0 2rem;
+            text-align: center;
+            opacity: 0.5;
+        }
+
+        .buttons {
+            text-align: right;
+            margin-bottom: 0.5em;
+        }
+
+        .dateHolder {
+            max-width: 60em;
+            margin: 0 auto;
+        }
+
+        .date {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2em;
+        }
+
+        .date:last-child {
+            margin-bottom: 0;
+        }
+
+        .date.past .dateInfo {
+            opacity: 0.5;
+        }
+
+        .date.today .dateInfo {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+
+        .dateInfo {
+            flex: 0 0 3em;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0.5rem;
+            font-size: 1.25em;
+            font-weight: bold;
+            text-align: center;
+            /* padding: 0.5em 0.25em; */
+            /* line-height: 1; */
+        }
+
+        .dateInfo .day {
+            font-size: 2em;
+        }
+
+        .eventHolder {
+            flex: 1;
+            margin-left: 0.5em;
+        }
+
+        .event {
+            background-color: white;
+            margin-bottom: 1em;
+            border-left: 0.5em solid #214B24;
+        }
+
+        .event:last-child {
+            margin-bottom: 0;
+        }
+
+        .event.basketball {
+            border-color: #ff8f00;
+        }
+
+        .event.wrestling {
+            border-color: #c62828;
+        }
+
+        .eventInfoHolder {
+            display: flex;
+        }
+
+        .eventInfo {
+            flex: 1;
+            padding: 1em;
+        }
+
+        .eventInfo h1 {
+            font-size: 1.5em;
+            margin: 0.25em 0;
+            font-weight: bold;
+        }
+
+        .eventInfo h2 {
+            font-size: 1.25em;
+            margin: 0.25em 0;
+            font-weight: normal;
+            color: #888;
+        }
+
+        .eventIcon {
+            padding: 1em;
+            color: rgba(0, 0, 0, 0.15);
+        }
+
+        .eventActionHolder {
+            text-align: right;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 0.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- <i href="#" id="menu" class="button"><i class="material-icons">menu</i></a> -->
+        <h1>MWHS Events</h1>
+        <div class="flexExpand"></div>
+        <!-- <i href="#" id="account" class="button"><i class="material-icons">account_circle</i></a> -->
+        <a href="#" id="filter" class="button"><i class="material-icons">filter_list</i></a>
+        <a href="#" id="search" class="button"><i class="material-icons">search</i></a>
+    </header>
+    <main>
+        <!-- <div class="buttons">
+            <a href="#" id="filter" class="button"><i class="material-icons">filter_list</i></a>
+            <a href="#" id="search" class="button"><i class="material-icons">search</i></a>
+        </div> -->
+
+        <div class="dateHolder">
+            <div class="date past">
+                <div class="dateInfo">
+                    <div class="name">THU</div>
+                    <div class="day">20</div>
+                </div>
+
+                <div class="eventHolder">
+                    <div class="event basketball">
+                        <div class="eventInfoHolder">
+                            <div class="eventInfo">
+                                <h1 class="eventTitle">Girls Freshman Game vs. Bellevue West Senior High School</h1>
+                                <h2 class="eventDescription">Millard West High School</h2>
+                            </div>
+
+                            <div class="eventIcon">
+                                <i class="material-icons">sports_basketball</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="date past">
+                <div class="dateInfo">
+                    <div class="name">FRI</div>
+                    <div class="day">21</div>
+                </div>
+
+                <div class="eventHolder">
+                    <div class="event cheer">
+                        <div class="eventInfoHolder">
+                            <div class="eventInfo">
+                                <h1 class="eventTitle">Cheer and Dance State Competition</h1>
+                                <h2 class="eventDescription">Heartland Event Center - Grand Island, NE</h2>
+                            </div>
+
+                            <div class="eventIcon">
+                                <i class="material-icons">emoji_people</i>
+                            </div>
+                        </div>
+
+                        <div class="eventActionHolder">
+                            <a href="#" class="button">Join On-Call</a>
+                        </div>
+                    </div>
+
+                    <div class="event wrestling">
+                        <div class="eventInfoHolder">
+                            <div class="eventInfo">
+                                <h1 class="eventTitle">Boys Varsity State Meet</h1>
+                                <h2 class="eventDescription">Century Link Center</h2>
+                            </div>
+
+                            <div class="eventIcon">
+                                <i class="material-icons">sports_kabaddi</i>
+                            </div>
+                        </div>
+
+                        <div class="eventActionHolder">
+                            <a href="#" class="button">Join On-Call</a>
+                            <a href="#" class="button primary">Sign Up</a>
+                        </div>
+                    </div>
+
+                    <div class="event basketball">
+                        <div class="eventInfoHolder">
+                            <div class="eventInfo">
+                                <h1 class="eventTitle">Girls Varsity Game vs. Bellevue West Senior High School</h1>
+                                <h2 class="eventDescription">Bellevue West High School</h2>
+                            </div>
+                            <div class="eventIcon">
+                                <i class="material-icons">sports_basketball</i>
+                            </div>
+                        </div>
+                        <div class="eventActionHolder">
+                            <a href="#" class="button">Join On-Call</a>
+                            <a href="#" class="button primary">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="date today">
+                <div class="dateInfo">
+                    <div class="name">SAT</div>
+                    <div class="day">22</div>
+                </div>
+                
+                <div class="eventHolder">
+                    <div class="event wrestling">
+                        <div class="eventInfoHolder">
+                            <div class="eventInfo">
+                                <h1 class="eventTitle">Boys Varsity State Meet</h1>
+                                <h2 class="eventDescription">Century Link Center</h2>
+                            </div>
+
+                            <div class="eventIcon">
+                                <i class="material-icons">sports_kabaddi</i>
+                            </div>
+                        </div>
+
+                        <div class="eventActionHolder">
+                            <a href="#" class="button">Join On-Call</a>
+                            <a href="#" class="button primary">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="date">
+                <div class="dateInfo">
+                    <div class="name">SUN</div>
+                    <div class="day">23</div>
+                </div>
+
+                <div class="eventHolder">
+                    <div class="event cheer">
+                        <div class="eventInfoHolder">
+                            <div class="eventInfo">
+                                <h1 class="eventTitle">Cheer and Dance State Competition</h1>
+                                <h2 class="eventDescription">Heartland Event Center - Grand Island, NE</h2>
+                            </div>
+
+                            <div class="eventIcon">
+                                <i class="material-icons">emoji_people</i>
+                            </div>
+                        </div>
+
+                        <div class="eventActionHolder">
+                            <a href="#" class="button">Join On-Call</a>
+                        </div>
+                    </div>
+
+                    <div class="event wrestling">
+                        <div class="eventInfoHolder">
+                            <div class="eventInfo">
+                                <h1 class="eventTitle">Boys Varsity State Meet</h1>
+                                <h2 class="eventDescription">Century Link Center</h2>
+                            </div>
+
+                            <div class="eventIcon">
+                                <i class="material-icons">sports_kabaddi</i>
+                            </div>
+                        </div>
+
+                        <div class="eventActionHolder">
+                            <a href="#" class="button">Join On-Call</a>
+                            <a href="#" class="button primary">Sign Up</a>
+                        </div>
+                    </div>
+
+                    <div class="event basketball">
+                        <div class="eventInfoHolder">
+                            <div class="eventInfo">
+                                <h1 class="eventTitle">Girls Varsity Game vs. Bellevue West Senior High School</h1>
+                                <h2 class="eventDescription">Bellevue West High School</h2>
+                            </div>
+                            <div class="eventIcon">
+                                <i class="material-icons">sports_basketball</i>
+                            </div>
+                        </div>
+                        <div class="eventActionHolder">
+                            <a href="#" class="button">Join On-Call</a>
+                            <a href="#" class="button primary">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            <!-- <div class="eventCalendar">
+                CALENDAR
+            </div> -->
+    </main>
+    <footer>
+        <p>Copyright 2020 - Back Office Boiz</p>
+    </footer>
+</body>
+
+</html>
