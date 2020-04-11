@@ -1,0 +1,31 @@
+branches:
+  except:
+    - docs
+language: node_js
+node_js:
+  - 12
+cache:
+  directories:
+    - "$HOME/.npm"
+stages:
+  - name: after_success
+    if: branch = master
+  - name: deploy
+    if: branch = master
+install:
+  - npm ci
+before_script:
+  - npm install -g gulp-cli
+script:
+  - gulp build
+after_success:
+  - chmod ugo+x ./scripts/initDocsFolder.sh
+  - ./scripts/initDocsFolder.sh
+  - gulp buildDocs
+deploy:
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    keep_history: true
+    local_dir: ./docs
+    target_branch: docs
