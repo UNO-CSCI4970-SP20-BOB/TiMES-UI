@@ -1,6 +1,6 @@
 branches:
   except:
-    - docs
+    - gh-pages
 language: node_js
 node_js:
   - 12
@@ -28,4 +28,4 @@ deploy:
     github_token: $GITHUB_TOKEN
     keep_history: true
     local_dir: ./docs
-    target_branch: docs
+    target_branch: gh-pages
