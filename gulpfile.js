@@ -1,6 +1,7 @@
 'use strict';
 
 const gulp = require('gulp');
+const gulpStylelint = require('gulp-stylelint');
 const gulpSass = require('gulp-sass');
 const gulpSourcemaps = require('gulp-sourcemaps');
 const gulpJsdoc = require('gulp-jsdoc3');
@@ -23,6 +24,10 @@ const sources = {
     static: `${dirs.src}/static/**/*`,
     js: `${dirs.src}/js/**/*.js`
 }
+
+const destinations = {
+    scss: `${dirs.src}/scss`,
+};
 
 const currentDocsDir = `${dirs.docs}/${packageJson.name}/${packageJson.version}`;
 
@@ -63,6 +68,21 @@ function buildDocs(done) {
 }
 buildDocs.description = 'Compile JavaScript documentation files to docs folder.';
 
+function fixStyles(done) {
+    return gulp.src(sources.scss)
+        .pipe(gulpStylelint({
+            fix: true,
+            reporters: [
+                {
+                    formatter: 'string',
+                    console: true
+                }
+            ]
+        }))
+        .pipe(gulp.dest(destinations.scss));
+}
+fixStyles.description = 'Fix Sass files to follow project formatting.';
+
 function watch(done) {
     browserSync.init({
         server: {
@@ -91,7 +111,7 @@ function cleanCurrentDocs(done) {
 }
 cleanDocs.description = 'Cleans up current version of generated documentation.';
 
-const build = gulp.series(clean, gulp.parallel(buildStatic, buildStyles, buildScripts));
+const build = gulp.series(clean, fixStyles, gulp.parallel(buildStatic, buildStyles, buildScripts));
 build.description = 'Compile all files to output folder.';
 
 const dev = gulp.series(build, watch);
@@ -102,6 +122,7 @@ module.exports = {
     buildStyles: buildStyles,
     buildScripts: buildScripts,
     buildDocs: buildDocs,
+    fixStyles: fixStyles,
     watch: watch,
     clean: clean,
     cleanDocs: cleanDocs,
