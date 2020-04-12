@@ -11,7 +11,7 @@ const browserSync = require('browser-sync');
 const del = require('del');
 
 const packageJson = require('./package.json');
-const webpackConfig = require('./webpack.config')
+const webpackConfig = require('./webpack.config');
 
 const dirs = {
     src: './src',
@@ -23,7 +23,7 @@ const sources = {
     scss: `${dirs.src}/scss/**/*.scss`,
     static: `${dirs.src}/static/**/*`,
     js: `${dirs.src}/js/**/*.js`
-}
+};
 
 const destinations = {
     scss: `${dirs.src}/scss`,
@@ -109,7 +109,7 @@ cleanDocs.description = 'Cleans up all generated documentation.';
 function cleanCurrentDocs(done) {
     return del([currentDocsDir]);
 }
-cleanDocs.description = 'Cleans up current version of generated documentation.';
+cleanCurrentDocs.description = 'Cleans up current version of generated documentation.';
 
 const build = gulp.series(clean, fixStyles, gulp.parallel(buildStatic, buildStyles, buildScripts));
 build.description = 'Compile all files to output folder.';
@@ -131,6 +131,3 @@ module.exports = {
     dev: dev,
     default: dev
 }
-
-
-

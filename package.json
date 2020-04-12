@@ -1,45 +1,45 @@
 {
-  "name": "@backofficeapps/times-ui",
-  "version": "1.0.0-alpha",
-  "description": "UI Design for TiMES application",
-  "homepage": "https://backofficeapps.dev/TiMES-UI/",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {},
-  "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "del": "^5.1.0",
-    "gulp": "^4.0.2",
-    "gulp-jsdoc3": "^3.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-stylelint": "^13.0.0",
-    "sass": "^1.26.3",
-    "stylelint": "^13.3.2",
-    "stylelint-config-sass-guidelines": "^7.0.0",
-    "webpack": "^4.42.1",
-    "webpack-stream": "^5.2.1"
-  },
-  "scripts": {
-    "start": "gulp",
-    "build": "gulp build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "github:UNO-CSCI4970-SP20-BOB/TiMES-UI"
-  },
-  "sass": {
-    "outputStyle": "compressed",
-    "includePaths": [
-      "node_modules"
-    ]
-  },
-  "jsDoc": {
-    "source": {
-      "include": [
-        "package.json",
-        "README.md"
-      ]
+    "name": "@backofficeapps/times-ui",
+    "version": "1.0.0-alpha",
+    "description": "UI Design for TiMES application",
+    "homepage": "https://backofficeapps.dev/TiMES-UI/",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {},
+    "devDependencies": {
+        "browser-sync": "^2.26.7",
+        "del": "^5.1.0",
+        "gulp": "^4.0.2",
+        "gulp-jsdoc3": "^3.0.0",
+        "gulp-sass": "^4.0.2",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-stylelint": "^13.0.0",
+        "sass": "^1.26.3",
+        "stylelint": "^13.3.2",
+        "stylelint-config-sass-guidelines": "^7.0.0",
+        "webpack": "^4.42.1",
+        "webpack-stream": "^5.2.1"
+    },
+    "scripts": {
+        "start": "gulp",
+        "build": "gulp build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "github:UNO-CSCI4970-SP20-BOB/TiMES-UI"
+    },
+    "sass": {
+        "outputStyle": "compressed",
+        "includePaths": [
+            "node_modules"
+        ]
+    },
+    "jsDoc": {
+        "source": {
+            "include": [
+                "package.json",
+                "README.md"
+            ]
+        }
     }
-  }
 }
