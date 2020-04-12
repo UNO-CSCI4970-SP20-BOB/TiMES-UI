@@ -5,6 +5,7 @@ const gulpStylelint = require('gulp-stylelint');
 const gulpSass = require('gulp-sass');
 const gulpSourcemaps = require('gulp-sourcemaps');
 const gulpJsdoc = require('gulp-jsdoc3');
+const gulpEslint = require('gulp-eslint');
 const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
 const browserSync = require('browser-sync');
@@ -19,14 +20,16 @@ const dirs = {
     docs: './docs'
 };
 
-const sources = {
-    scss: `${dirs.src}/scss/**/*.scss`,
-    static: `${dirs.src}/static/**/*`,
-    js: `${dirs.src}/js/**/*.js`
+const sourceDirs = {
+    scss: `${dirs.src}/scss`,
+    static: `${dirs.src}/static`,
+    js: `${dirs.src}/js`,
 };
 
-const destinations = {
-    scss: `${dirs.src}/scss`,
+const sources = {
+    scss: `${sourceDirs.scss}/**/*.scss`,
+    static: `${sourceDirs.static}/**/*`,
+    js: `${sourceDirs.js}/**/*.js`
 };
 
 const currentDocsDir = `${dirs.docs}/${packageJson.name}/${packageJson.version}`;
@@ -79,9 +82,19 @@ function fixStyles(done) {
                 }
             ]
         }))
-        .pipe(gulp.dest(destinations.scss));
+        .pipe(gulp.dest(sourceDirs.scss));
 }
 fixStyles.description = 'Fix Sass files to follow project formatting.';
+
+function fixScripts(done) {
+    return gulp.src(sources.js)
+        .pipe(gulpEslint({
+            fix: true
+        }))
+        .pipe(gulpEslint.format())
+        .pipe(gulp.dest(sourceDirs.js));
+}
+fixScripts.description = 'Fix JavaScript files to follow project formatting.';
 
 function watch(done) {
     browserSync.init({
@@ -111,7 +124,7 @@ function cleanCurrentDocs(done) {
 }
 cleanCurrentDocs.description = 'Cleans up current version of generated documentation.';
 
-const build = gulp.series(clean, fixStyles, gulp.parallel(buildStatic, buildStyles, buildScripts));
+const build = gulp.series(clean, gulp.parallel(fixStyles, fixScripts), gulp.parallel(buildStatic, buildStyles, buildScripts));
 build.description = 'Compile all files to output folder.';
 
 const dev = gulp.series(build, watch);
@@ -123,6 +136,7 @@ module.exports = {
     buildScripts: buildScripts,
     buildDocs: buildDocs,
     fixStyles: fixStyles,
+    fixScripts: fixScripts,
     watch: watch,
     clean: clean,
     cleanDocs: cleanDocs,
