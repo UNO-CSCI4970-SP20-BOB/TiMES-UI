@@ -2,389 +2,340 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Events - EvWo</title>
+    <title>Events - TiMES</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto|Roboto+Condensed&display=swap"
-        rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet">
 
-    <style type="text/css">
-        .flexExpand {
-            flex: 1;
-        }
-
-        h1 {
-            font-family: 'Roboto Condensed', sans-serif;
-        }
-
-        input[type=text] {
-            padding: 0.5em;
-        }
-
-        .button {
-            letter-spacing: 0.13em;
-            font-size: 0.8rem;
-            font-weight: bold;
-            display: inline-block;
-            padding: 0.75em;
-            border-radius: 0.25em;
-            text-decoration: none;
-            color: inherit;
-            text-transform: uppercase;
-            color: #214B24;
-        }
-
-        .button:hover {
-            background-color: rgba(0, 0, 0, 0.15);
-        }
-
-        .button.outlined {
-            border: 1px solid rgba(0, 0, 0, 0.5);
-        }
-
-        .button.primary {
-            background-color: #214B24;
-            color: white;
-        }
-
-        .button.disabled {
-            color: rgba(0, 0, 0, 0.35)
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Roboto Condensed', sans-serif;
-            min-height: 100vh;
-            background-color: #f5f5f5;
-            font-size: small;
-        }
-
-        header {
-            background-color: #214B24;
-            color: white;
-            padding: 0.5em 0.5rem;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-        }
-
-        header h1 {
-            margin: 0;
-            margin-left: 0.25em;
-        }
-
-        header .button {
-            color: white;
-        }
-
-        main {
-            padding: 0.5em 0.5rem;
-            height: 100%;
-        }
-
-        footer {
-            padding: 0 2rem;
-            text-align: center;
-            opacity: 0.5;
-        }
-
-        .buttons {
-            text-align: right;
-            margin-bottom: 0.5em;
-        }
-
-        .dateHolder {
-            max-width: 60em;
-            margin: 0 auto;
-        }
-
-        .date {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 2em;
-        }
-
-        .date:last-child {
-            margin-bottom: 0;
-        }
-
-        .date.past .dateInfo {
-            opacity: 0.5;
-        }
-
-        .date.today .dateInfo {
-            background-color: rgba(0, 0, 0, 0.15);
-        }
-
-        .dateInfo {
-            flex: 0 0 3em;
-            position: -webkit-sticky;
-            position: sticky;
-            top: 0.5rem;
-            font-size: 1.25em;
-            font-weight: bold;
-            text-align: center;
-            /* padding: 0.5em 0.25em; */
-            /* line-height: 1; */
-        }
-
-        .dateInfo .day {
-            font-size: 2em;
-        }
-
-        .eventHolder {
-            flex: 1;
-            margin-left: 0.5em;
-        }
-
-        .event {
-            background-color: white;
-            margin-bottom: 1em;
-            border-left: 0.5em solid #214B24;
-        }
-
-        .event:last-child {
-            margin-bottom: 0;
-        }
-
-        .event.basketball {
-            border-color: #ff8f00;
-        }
-
-        .event.wrestling {
-            border-color: #c62828;
-        }
-
-        .eventInfoHolder {
-            display: flex;
-        }
-
-        .eventInfo {
-            flex: 1;
-            padding: 1em;
-        }
-
-        .eventInfo h1 {
-            font-size: 1.5em;
-            margin: 0.25em 0;
-            font-weight: bold;
-        }
-
-        .eventInfo h2 {
-            font-size: 1.25em;
-            margin: 0.25em 0;
-            font-weight: normal;
-            color: #888;
-        }
-
-        .eventIcon {
-            padding: 1em;
-            color: rgba(0, 0, 0, 0.15);
-        }
-
-        .eventActionHolder {
-            text-align: right;
-            border-top: 1px solid rgba(0, 0, 0, 0.08);
-            padding: 0.5em;
-        }
-    </style>
+    <script src="script.js"></script>
 </head>
 
 <body>
-    <header>
-        <!-- <i href="#" id="menu" class="button"><i class="material-icons">menu</i></a> -->
-        <h1>MWHS Events</h1>
-        <div class="flexExpand"></div>
-        <!-- <i href="#" id="account" class="button"><i class="material-icons">account_circle</i></a> -->
-        <a href="#" id="filter" class="button"><i class="material-icons">filter_list</i></a>
-        <a href="#" id="search" class="button"><i class="material-icons">search</i></a>
+    <header class="mdc-top-app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <!-- <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button> -->
+                <span class="mdc-top-app-bar__title">Events</span>
+            </section>
+        </div>
     </header>
+
+    <div class="mdc-top-app-bar--fixed-adjust"></div>
+
     <main>
-        <!-- <div class="buttons">
-            <a href="#" id="filter" class="button"><i class="material-icons">filter_list</i></a>
-            <a href="#" id="search" class="button"><i class="material-icons">search</i></a>
-        </div> -->
-
-        <div class="dateHolder">
-            <div class="date past">
-                <div class="dateInfo">
-                    <div class="name">THU</div>
-                    <div class="day">20</div>
+        <div class="day-list">
+            <div class="day-list__day">
+                <div class="day-list__date">
+                    <h1 class="day-list__name mdc-typography--subtitle2">MAR</h1>
+                    <h2 class="day-list__number mdc-typography--headline5">20</h2>
                 </div>
 
-                <div class="eventHolder">
-                    <div class="event basketball">
-                        <div class="eventInfoHolder">
-                            <div class="eventInfo">
-                                <h1 class="eventTitle">Girls Freshman Game vs. Bellevue West Senior High School</h1>
-                                <h2 class="eventDescription">Millard West High School</h2>
+                <div class="event-list">
+                    <div class="event-card">
+                        <div class="event-card__color-bar" style="background-color: #c62828;"></div>
+
+                        <div class="mdc-card mdc-card--outlined event-card__main">
+                            <div class="event-card__primary event-card__primary mdc-card__primary-action">
+                                <span
+                                    class="event-card__overline mdc-typography--overline">Basketball</span>
+                                <h1 class="event-card__title mdc-typography--headline5">Girls Freshman
+                                    Game
+                                    vs. Bellevue
+                                    West Senior High School</h1>
+                                <h2 class="event-card__subtitle mdc-typography--subtitle2">Millard West
+                                    High
+                                    School</h2>
                             </div>
 
-                            <div class="eventIcon">
-                                <i class="material-icons">sports_basketball</i>
+                            <hr class="mdc-list-divider event-card__divider" />
+
+                            <div class="event-card__job-section">
+                                <div class="event-card__job-header mdc-typography--subtitle1">Jobs</div>
+
+                                <ul class="event-card__job-list mdc-list">
+                                    <li class="mdc-list-item">
+                                        <span class="mdc-list-item__graphic">
+                                            <div class="mdc-checkbox">
+                                                <input type="checkbox" class="mdc-checkbox__native-control" />
+                                                <div class="mdc-checkbox__background">
+                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                            d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                </div>
+                                                <div class="mdc-checkbox__ripple"></div>
+                                            </div>
+                                        </span>
+
+                                        <label class="mdc-list-item__text">Scoreboard</label>
+
+                                        <div class="mdc-list-item__meta">
+                                            <a href="#" class="mdc-icon-button material-icons">info</a>
+                                        </div>
+                                    </li>
+
+                                    <li class="mdc-list-item">
+                                        <span class="mdc-list-item__graphic">
+                                            <div class="mdc-checkbox">
+                                                <input type="checkbox" class="mdc-checkbox__native-control" />
+                                                <div class="mdc-checkbox__background">
+                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                            d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                </div>
+                                                <div class="mdc-checkbox__ripple"></div>
+                                            </div>
+                                        </span>
+
+                                        <label class="mdc-list-item__text">Tickets</label>
+
+                                        <div class="mdc-list-item__meta">
+                                            <a href="#" class="mdc-icon-button material-icons">info</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-card__color-bar" style="background-color: #3a539b;"></div>
+
+                        <div class="mdc-card mdc-card--outlined event-card__main">
+                            <div class="event-card__primary event-card__primary mdc-card__primary-action">
+                                <span
+                                    class="event-card__overline mdc-typography--overline">Basketball</span>
+                                <h1 class="event-card__title mdc-typography--headline5">Girls Freshman
+                                    Game
+                                    vs. Bellevue
+                                    West Senior High School</h1>
+                                <h2 class="event-card__subtitle mdc-typography--subtitle2">Millard West
+                                    High
+                                    School</h2>
+                            </div>
+
+                            <hr class="mdc-list-divider event-card__divider" />
+
+                            <div class="event-card__job-section">
+                                <div class="event-card__job-header mdc-typography--subtitle1">Jobs</div>
+
+                                <ul class="event-card__job-list mdc-list">
+                                    <li class="mdc-list-item">
+                                        <span class="mdc-list-item__graphic">
+                                            <div class="mdc-checkbox">
+                                                <input type="checkbox" class="mdc-checkbox__native-control" />
+                                                <div class="mdc-checkbox__background">
+                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                            d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                </div>
+                                                <div class="mdc-checkbox__ripple"></div>
+                                            </div>
+                                        </span>
+
+                                        <label class="mdc-list-item__text">Scoreboard</label>
+
+                                        <div class="mdc-list-item__meta">
+                                            <a href="#" class="mdc-icon-button material-icons">info</a>
+                                        </div>
+                                    </li>
+
+                                    <li class="mdc-list-item">
+                                        <span class="mdc-list-item__graphic">
+                                            <div class="mdc-checkbox">
+                                                <input type="checkbox" class="mdc-checkbox__native-control" />
+                                                <div class="mdc-checkbox__background">
+                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                            d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                </div>
+                                                <div class="mdc-checkbox__ripple"></div>
+                                            </div>
+                                        </span>
+
+                                        <label class="mdc-list-item__text">Tickets</label>
+
+                                        <div class="mdc-list-item__meta">
+                                            <a href="#" class="mdc-icon-button material-icons">info</a>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="date past">
-                <div class="dateInfo">
-                    <div class="name">FRI</div>
-                    <div class="day">21</div>
+            <div class="day-list__day">
+                <div class="day-list__date">
+                    <h1 class="day-list__name mdc-typography--subtitle2">APR</h1>
+                    <h2 class="day-list__number mdc-typography--headline5">21</h2>
                 </div>
 
-                <div class="eventHolder">
-                    <div class="event cheer">
-                        <div class="eventInfoHolder">
-                            <div class="eventInfo">
-                                <h1 class="eventTitle">Cheer and Dance State Competition</h1>
-                                <h2 class="eventDescription">Heartland Event Center - Grand Island, NE</h2>
+                <div class="event-list">
+                    <div class="event-card">
+                        <div class="event-card__color-bar" style="background-color: #214B24;"></div>
+
+                        <div class="mdc-card mdc-card--outlined event-card__main">
+                            <div class="event-card__primary event-card__primary mdc-card__primary-action">
+                                <span
+                                    class="event-card__overline mdc-typography--overline">Basketball</span>
+                                <h1 class="event-card__title mdc-typography--headline5">Girls Freshman
+                                    Game
+                                    vs.
+                                    Bellevue
+                                    West Senior High School</h1>
+                                <h2 class="event-card__subtitle mdc-typography--subtitle2">Millard West
+                                    High
+                                    School</h2>
                             </div>
 
-                            <div class="eventIcon">
-                                <i class="material-icons">emoji_people</i>
+                            <hr class="mdc-list-divider event-card__divider" />
+
+                            <div class="event-card__job-section">
+                                <div class="event-card__job-header mdc-typography--subtitle1">Jobs</div>
+
+                                <ul class="event-card__job-list mdc-list">
+                                    <li class="mdc-list-item">
+                                        <span class="mdc-list-item__graphic">
+                                            <div class="mdc-checkbox">
+                                                <input type="checkbox" class="mdc-checkbox__native-control" />
+                                                <div class="mdc-checkbox__background">
+                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                            d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                </div>
+                                                <div class="mdc-checkbox__ripple"></div>
+                                            </div>
+                                        </span>
+
+                                        <label class="mdc-list-item__text">Scoreboard</label>
+
+                                        <div class="mdc-list-item__meta">
+                                            <a href="#" class="mdc-icon-button material-icons">info</a>
+                                        </div>
+                                    </li>
+
+                                    <li class="mdc-list-item">
+                                        <span class="mdc-list-item__graphic">
+                                            <div class="mdc-checkbox">
+                                                <input type="checkbox" class="mdc-checkbox__native-control" />
+                                                <div class="mdc-checkbox__background">
+                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                            d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                </div>
+                                                <div class="mdc-checkbox__ripple"></div>
+                                            </div>
+                                        </span>
+
+                                        <label class="mdc-list-item__text">Tickets</label>
+
+                                        <div class="mdc-list-item__meta">
+                                            <a href="#" class="mdc-icon-button material-icons">info</a>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-
-                        <div class="eventActionHolder">
-                            <a href="#" class="button">Join On-Call</a>
-                        </div>
-                    </div>
-
-                    <div class="event wrestling">
-                        <div class="eventInfoHolder">
-                            <div class="eventInfo">
-                                <h1 class="eventTitle">Boys Varsity State Meet</h1>
-                                <h2 class="eventDescription">Century Link Center</h2>
-                            </div>
-
-                            <div class="eventIcon">
-                                <i class="material-icons">sports_kabaddi</i>
-                            </div>
-                        </div>
-
-                        <div class="eventActionHolder">
-                            <a href="#" class="button">Join On-Call</a>
-                            <a href="#" class="button primary">Sign Up</a>
-                        </div>
-                    </div>
-
-                    <div class="event basketball">
-                        <div class="eventInfoHolder">
-                            <div class="eventInfo">
-                                <h1 class="eventTitle">Girls Varsity Game vs. Bellevue West Senior High School</h1>
-                                <h2 class="eventDescription">Bellevue West High School</h2>
-                            </div>
-                            <div class="eventIcon">
-                                <i class="material-icons">sports_basketball</i>
-                            </div>
-                        </div>
-                        <div class="eventActionHolder">
-                            <a href="#" class="button">Join On-Call</a>
-                            <a href="#" class="button primary">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="date today">
-                <div class="dateInfo">
-                    <div class="name">SAT</div>
-                    <div class="day">22</div>
-                </div>
-
-                <div class="eventHolder">
-                    <div class="event wrestling">
-                        <div class="eventInfoHolder">
-                            <div class="eventInfo">
-                                <h1 class="eventTitle">Boys Varsity State Meet</h1>
-                                <h2 class="eventDescription">Century Link Center</h2>
-                            </div>
-
-                            <div class="eventIcon">
-                                <i class="material-icons">sports_kabaddi</i>
-                            </div>
-                        </div>
-
-                        <div class="eventActionHolder">
-                            <a href="#" class="button">Join On-Call</a>
-                            <a href="#" class="button primary">Sign Up</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="date">
-                <div class="dateInfo">
-                    <div class="name">SUN</div>
-                    <div class="day">23</div>
+            <div class="day-list__day">
+                <div class="day-list__date">
+                    <h1 class="day-list__name mdc-typography--subtitle2">MAY</h1>
+                    <h2 class="day-list__number mdc-typography--headline5">22</h2>
                 </div>
 
-                <div class="eventHolder">
-                    <div class="event cheer">
-                        <div class="eventInfoHolder">
-                            <div class="eventInfo">
-                                <h1 class="eventTitle">Cheer and Dance State Competition</h1>
-                                <h2 class="eventDescription">Heartland Event Center - Grand Island, NE</h2>
+                <div class="event-list">
+                    <div class="event-card">
+                        <div class="event-card__color-bar" style="background-color: #ff8f00;"></div>
+
+                        <div class="mdc-card mdc-card--outlined event-card__main">
+                            <div class="event-card__primary event-card__primary mdc-card__primary-action">
+                                <span
+                                    class="event-card__overline mdc-typography--overline">Basketball</span>
+                                <h1 class="event-card__title mdc-typography--headline5">Girls Freshman
+                                    Game
+                                    vs.
+                                    Bellevue
+                                    West Senior High School</h1>
+                                <h2 class="event-card__subtitle mdc-typography--subtitle2">Millard West
+                                    High
+                                    School</h2>
                             </div>
 
-                            <div class="eventIcon">
-                                <i class="material-icons">emoji_people</i>
-                            </div>
-                        </div>
+                            <hr class="mdc-list-divider event-card__divider" />
 
-                        <div class="eventActionHolder">
-                            <a href="#" class="button">Join On-Call</a>
-                        </div>
-                    </div>
+                            <div class="event-card__job-section">
+                                <div class="event-card__job-header mdc-typography--subtitle1">Jobs</div>
 
-                    <div class="event wrestling">
-                        <div class="eventInfoHolder">
-                            <div class="eventInfo">
-                                <h1 class="eventTitle">Boys Varsity State Meet</h1>
-                                <h2 class="eventDescription">Century Link Center</h2>
-                            </div>
+                                <ul class="event-card__job-list mdc-list">
+                                    <li class="mdc-list-item">
+                                        <span class="mdc-list-item__graphic">
+                                            <div class="mdc-checkbox">
+                                                <input type="checkbox" class="mdc-checkbox__native-control" />
+                                                <div class="mdc-checkbox__background">
+                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                            d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                </div>
+                                                <div class="mdc-checkbox__ripple"></div>
+                                            </div>
+                                        </span>
 
-                            <div class="eventIcon">
-                                <i class="material-icons">sports_kabaddi</i>
-                            </div>
-                        </div>
+                                        <label class="mdc-list-item__text">Scoreboard</label>
 
-                        <div class="eventActionHolder">
-                            <a href="#" class="button">Join On-Call</a>
-                            <a href="#" class="button primary">Sign Up</a>
-                        </div>
-                    </div>
+                                        <div class="mdc-list-item__meta">
+                                            <a href="#" class="mdc-icon-button material-icons">info</a>
+                                        </div>
+                                    </li>
 
-                    <div class="event basketball">
-                        <div class="eventInfoHolder">
-                            <div class="eventInfo">
-                                <h1 class="eventTitle">Girls Varsity Game vs. Bellevue West Senior High School</h1>
-                                <h2 class="eventDescription">Bellevue West High School</h2>
+                                    <li class="mdc-list-item">
+                                        <span class="mdc-list-item__graphic">
+                                            <div class="mdc-checkbox">
+                                                <input type="checkbox" class="mdc-checkbox__native-control" />
+                                                <div class="mdc-checkbox__background">
+                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                            d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                </div>
+                                                <div class="mdc-checkbox__ripple"></div>
+                                            </div>
+                                        </span>
+
+                                        <label class="mdc-list-item__text">Tickets</label>
+
+                                        <div class="mdc-list-item__meta">
+                                            <a href="#" class="mdc-icon-button material-icons">info</a>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="eventIcon">
-                                <i class="material-icons">sports_basketball</i>
-                            </div>
-                        </div>
-                        <div class="eventActionHolder">
-                            <a href="#" class="button">Join On-Call</a>
-                            <a href="#" class="button primary">Sign Up</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-        <!-- <div class="eventCalendar">
-                CALENDAR
-            </div> -->
     </main>
-    <footer>
-        <p>Copyright 2020 - Back Office Boiz</p>
-    </footer>
 </body>
 
 </html>

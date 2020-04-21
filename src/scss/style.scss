@@ -1,4 +1,135 @@
+@use '@material/theme' with (
+  $primary: #214b24,
+  $secondary: #303030
+);
+
+@use '@material/typography' with (
+  $font-family: unquote($string: '"Roboto Condensed", Roboto, sans-serif')
+);
+
+@use '@material/shape' with (
+  $small-component-radius: 0%,
+  $medium-component-radius: 0%,
+  $large-component-radius: 0%
+);
+
+@use '@material/card';
+@use '@material/list';
+@use '@material/checkbox';
+@use '@material/icon-button';
+@use '@material/top-app-bar/mdc-top-app-bar';
+
+@include theme.core-styles;
+@include typography.core-styles;
+@include card.core-styles;
+@include list.core-styles;
+@include checkbox.core-styles;
+@include icon-button.core-styles;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons&display=block');
+
 body {
+  @include typography.base;
+
+  background-color: #f8f8f8;
+  font-size: 16px;
+  margin: 0;
+}
+
+$gutter: 0.5em;
+$material-gutter: 1em;
+
+main {
+  margin: $gutter;
+}
+
+.day-list {
+  max-width: 45em;
+  margin: auto;
+
+  &__day {
+    align-items: flex-start;
+    display: flex;
+    margin-bottom: 1.5em;
+  }
+
+  &__date {
+    flex: 0 0 3em;
+    margin-right: 0.5em;
+    position: sticky;
+    text-align: center;
+    // top: 72px;
+    top: 0.5rem;
+  }
+
+  &__name {
+    font-size: 1em;
     margin: 0;
-    background-color: #f8f8f8;
+  }
+
+  &__number {
+    font-size: 2em;
+    margin: 0;
+  }
+}
+
+.day-list .event-list {
+  flex: 1;
+}
+
+.event-list .event-card {
+  margin-bottom: $gutter;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.event-card {
+  display: flex;
+
+  &__color-bar {
+    $width: 0.5rem;
+
+    background-color: #404040;
+    min-width: $width;
+    width: $width;
+  }
+
+  &__main {
+    border-left-style: none;
+    flex: 1;
+  }
+
+  &__primary {
+    padding: $material-gutter;
+  }
+
+  &__overline {
+    margin: 0;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-top: 0.5em;
+    opacity: 0.6;
+  }
+
+  &__divider {
+    margin: 0 $material-gutter;
+  }
+
+  &__job-header {
+    margin: 0 $material-gutter;
+    margin-top: $material-gutter;
+  }
+
+  &__job-list {
+    padding-top: 0;
+  }
 }
