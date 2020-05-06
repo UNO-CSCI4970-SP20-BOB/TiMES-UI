@@ -1,0 +1,47 @@
+// First-party imports
+@use './variables';
+
+// Main styles
+@mixin core-styles() {
+  .event-card {
+    display: flex;
+
+    &__color-bar {
+      background-color: #404040;
+      flex: 0 1 0.5em;
+      min-width: 0.2em;
+    }
+
+    &__main {
+      border-left-style: none;
+      flex: 1;
+    }
+
+    &__primary {
+      padding: variables.$material-gutter;
+    }
+
+    &__title {
+      margin: 0;
+    }
+
+    &__subtitle {
+      margin: 0;
+      margin-top: 0.5em;
+      opacity: 0.6;
+    }
+
+    &__divider {
+      margin: 0 variables.$material-gutter;
+    }
+
+    &__job-header {
+      margin: 0 variables.$material-gutter;
+      margin-top: variables.$material-gutter;
+    }
+
+    &__job-list {
+      padding-top: 0;
+    }
+  }
+}

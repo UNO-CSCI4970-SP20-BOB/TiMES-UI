@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Events - TiMES</title>
+
+    <link href="../style.css" type="text/css" rel="stylesheet">
+
+    <script src="../script.js"></script>
+    <script>
+        var pageName = 'events';
+    </script>
+</head>
+
+<body>
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed app-bar app-bar--content-hideable" id="main-app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons-sharp mdc-top-app-bar__navigation-icon mdc-icon-button"
+                    aria-label="Navigation Menu">menu</button>
+                <h1 class="mdc-top-app-bar__title">Events</h1>
+            </section>
+
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <button class="material-icons-sharp mdc-top-app-bar__action-item mdc-icon-button"
+                    aria-label="Account Menu">account_circle</button>
+            </section>
+        </div>
+    </header>
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed app-bar app-bar--contextual app-bar--hidden"
+        id="events-contextual-app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons-sharp mdc-top-app-bar__navigation-icon mdc-icon-button"
+                    aria-label="Clear selection">close</button>
+                <span class="mdc-top-app-bar__title" id="events-contextual-app-bar-title">1 selected</span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <button class="material-icons-sharp mdc-top-app-bar__action-item mdc-icon-button"
+                    aria-label="Open sign up confirmation" aria-haspopup="true" aria-expanded="false"
+                    id="events-contextual-app-bar-confirm">done</button>
+            </section>
+        </div>
+    </header>
+
+    <div class="mdc-top-app-bar--fixed-adjust"></div>
+
+    <main class="day-list">
+        <form action="./action" method="post" autocomplete="on">
+            <article class="day-list__day" aria-labelledby="date-2020-06-22__month date-2020-06-22__day">
+                <time class="day-list__date" datetime="2020-06-22">
+                    <span class="day-list__name mdc-typography--subtitle2" id="date-2020-06-22__month">MAY</span>
+                    <span class="day-list__number mdc-typography--headline5" id="date-2020-06-22__day">22</span>
+                </time>
+
+                <div class="event-list">
+                    <article class="event-card" aria-labelledby="event-1__title">
+                        <div class="event-card__color-bar" style="background-color: #ff8f00;"></div>
+
+                        <div class="mdc-card mdc-card--outlined event-card__main">
+                            <a href="./event.html" class="mdc-card__primary-action event-card__primary"
+                                aria-labelledby="event-1__title">
+                                <span class="mdc-typography--overline" id="event-1__type">Basketball</span>
+                                <h1 class="mdc-typography--headline5 event-card__title" id="event-1__title">Girls
+                                    Freshman Game vs.
+                                    Bellevue West Senior High School</h1>
+                                <address class="mdc-typography--subtitle2 event-card__subtitle" id="event-1__location">
+                                    Millard West High
+                                    School</address>
+                            </a>
+
+                            <hr class="mdc-list-divider event-card__divider" />
+
+                            <div class="event-card__job-section">
+                                <h2 class="event-card__job-header mdc-typography--subtitle1">Jobs</h2>
+
+                                <ul class="event-card__job-list mdc-list" role="group"
+                                    aria-label="List of selectable jobs">
+                                    <li class="mdc-list-item mdc-list-item--disabled" role="checkbox"
+                                        aria-checked="true" aria-labelledby="job-1__title" tabIndex="0">
+                                        <span class="mdc-list-item__graphic">
+                                            <div class="mdc-checkbox mdc-checkbox--disabled">
+                                                <input type="checkbox"
+                                                    class="mdc-checkbox__native-control event-card__job-checkbox"
+                                                    id="job-1" disabled checked />
+                                                <div class="mdc-checkbox__background">
+                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                            d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                </div>
+                                                <div class="mdc-checkbox__ripple"></div>
+                                            </div>
+                                        </span>
+
+                                        <label class="mdc-list-item__text" id="job-1__title"
+                                            for="job-1">Scoreboard</label>
+
+                                        <!-- <div class="mdc-list-item__meta">
+                                            <a href="./event.html/job/1" class="mdc-icon-button material-icons-sharp"
+                                                aria-label="Job Information">info</a>
+                                        </div> -->
+                                    </li>
+
+                                    <li class="mdc-list-item" role="checkbox" aria-checked="false"
+                                        aria-labelledby="job-2__title">
+                                        <span class="mdc-list-item__graphic">
+                                            <div class="mdc-checkbox">
+                                                <input type="checkbox"
+                                                    class="mdc-checkbox__native-control event-card__job-checkbox"
+                                                    id="job-2" />
+                                                <div class="mdc-checkbox__background">
+                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                            d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                </div>
+                                                <div class="mdc-checkbox__ripple"></div>
+                                            </div>
+                                        </span>
+
+                                        <label class="mdc-list-item__text" id="job-2__title" for="job-2">Tickets</label>
+
+                                        <!-- <div class="mdc-list-item__meta">
+                                            <a href="./event.html/job/2" class="mdc-icon-button material-icons-sharp"
+                                                aria-label="Job Information">info</a>
+                                        </div> -->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </article>
+
+            <article class="day-list__day" aria-labelledby="date-2020-06-23__title">
+                <time class="day-list__date" id="date-2020-06-23__title" datetime="2020-06-23" aria-label="May 23">
+                    <span class="day-list__name mdc-typography--subtitle2" aria-hidden="true">MAY</span>
+                    <span class="day-list__number mdc-typography--headline5" aria-hidden="true">23</span>
+                </time>
+
+                <div class="event-list">
+                    <article class="event-card" aria-labelledby="event-2__title">
+                        <div class="event-card__color-bar" style="background-color: #002dc0;"></div>
+
+                        <div class="mdc-card mdc-card--outlined event-card__main">
+                            <a href="./2" class="mdc-card__primary-action event-card__primary"
+                                aria-labelledby="event-2__title">
+                                <span class="mdc-typography--overline" id="event-2__type">Swimming & Diving</span>
+                                <h1 class="mdc-typography--headline5 event-card__title" id="event-2__title">All Levels
+                                    Burke Invitational</h1>
+                                <address class="mdc-typography--subtitle2 event-card__subtitle" id="event-2__location">
+                                    Omaha Burke High School</address>
+                            </a>
+
+                            <hr class="mdc-list-divider event-card__divider" />
+
+                            <div class="event-card__job-section">
+                                <h2 class="event-card__job-header mdc-typography--subtitle1">Jobs</h2>
+
+                                <ul class="event-card__job-list mdc-list" role="group"
+                                    aria-label="List of selectable jobs">
+                                    <li class="mdc-list-item" role="checkbox" aria-checked="false"
+                                        aria-labelledby="job-3__title" tabIndex="0">
+                                        <span class="mdc-list-item__graphic">
+                                            <div class="mdc-checkbox">
+                                                <input type="checkbox"
+                                                    class="mdc-checkbox__native-control event-card__job-checkbox"
+                                                    id="job-3" />
+                                                <div class="mdc-checkbox__background">
+                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                            d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                </div>
+                                                <div class="mdc-checkbox__ripple"></div>
+                                            </div>
+                                        </span>
+
+                                        <label class="mdc-list-item__text" id="job-3__title"
+                                            for="job-3">Scoreboard</label>
+
+                                        <!-- <div class="mdc-list-item__meta">
+                                            <a href="./2/job/3" class="mdc-icon-button material-icons-sharp"
+                                                aria-label="Job Information">info</a>
+                                        </div> -->
+                                    </li>
+
+                                    <li class="mdc-list-item" role="checkbox" aria-checked="false"
+                                        aria-labelledby="job-4__title">
+                                        <span class="mdc-list-item__graphic">
+                                            <div class="mdc-checkbox">
+                                                <input type="checkbox"
+                                                    class="mdc-checkbox__native-control event-card__job-checkbox"
+                                                    id="job-4" />
+                                                <div class="mdc-checkbox__background">
+                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                            d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                </div>
+                                                <div class="mdc-checkbox__ripple"></div>
+                                            </div>
+                                        </span>
+
+                                        <label class="mdc-list-item__text" id="job-4__title" for="job-4">Tickets</label>
+
+                                        <!-- <div class="mdc-list-item__meta">
+                                            <a href="./2/job/4" class="mdc-icon-button material-icons-sharp"
+                                                aria-label="Job Information">info</a>
+                                        </div> -->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </article>
+        </form>
+    </main>
+
+    <div class="mdc-dialog" id="events-confirm-dialog">
+        <div class="mdc-dialog__container">
+            <div class="mdc-dialog__surface" role="alertdialog" aria-modal="true"
+                aria-labelledby="events-confirm-dialog-title" aria-describedby="events-confirm-dialog-content">
+                <h1 class="mdc-dialog__title" id="events-confirm-dialog-title">Confirm Sign Up?</h1>
+
+                <div class="mdc-dialog__content" id="events-confirm-dialog-content"></div>
+
+                <div class="mdc-dialog__actions">
+                    <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close">
+                        <div class="mdc-button__ripple"></div>
+                        <span class="mdc-button__label">Cancel</span>
+                    </button>
+                    <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="confirm"
+                        data-mdc-dialog-initial-focus>
+                        <div class="mdc-button__ripple"></div>
+                        <span class="mdc-button__label">Sign Up</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <div class="mdc-snackbar" id="events-snackbar-sign-up-start">
+        <div class="mdc-snackbar__surface">
+            <div class="mdc-snackbar__label" role="status" aria-live="polite">
+                Signing up...
+            </div>
+        </div>
+    </div>
+    <div class="mdc-snackbar" id="events-snackbar-sign-up-end">
+        <div class="mdc-snackbar__surface">
+            <div class="mdc-snackbar__label" role="status" aria-live="polite">
+                Signed up.
+            </div>
+        </div>
+    </div>
+    <div class="mdc-snackbar" id="events-snackbar-sign-up-fail">
+        <div class="mdc-snackbar__surface">
+            <div class="mdc-snackbar__label" role="status" aria-live="polite">
+                Signing up failed.
+            </div>
+
+            <div class="mdc-snackbar__actions">
+                <button type="button" class="mdc-button mdc-snackbar__action">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Retry</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

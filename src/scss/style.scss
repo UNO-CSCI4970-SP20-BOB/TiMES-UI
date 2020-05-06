@@ -1,135 +1,92 @@
+// Get variables first for use in other @use
+@use './variables';
+
+// Third-party imports
 @use '@material/theme' with (
-  $primary: #214b24,
-  $secondary: #303030
+  $primary: variables.$primary,
+  $secondary: variables.$secondary
 );
-
 @use '@material/typography' with (
-  $font-family: unquote($string: '"Roboto Condensed", Roboto, sans-serif')
+  $font-family: unquote($string: '\'Roboto Condensed\', Roboto, sans-serif')
 );
-
 @use '@material/shape' with (
-  $small-component-radius: 0%,
-  $medium-component-radius: 0%,
-  $large-component-radius: 0%
+  $small-component-radius: 2.5px,
+  $medium-component-radius: 0,
+  $large-component-radius: 0
 );
-
+@use '@material/animation';
+@use '@material/button';
 @use '@material/card';
-@use '@material/list';
 @use '@material/checkbox';
+@use '@material/dialog';
 @use '@material/icon-button';
+@use '@material/list';
+@use '@material/snackbar';
 @use '@material/top-app-bar/mdc-top-app-bar';
 
-@include theme.core-styles;
-@include typography.core-styles;
+// First-party imports
+@use './events';
+
+// Third-party includes
+@include button.core-styles;
+@include button.theme-baseline;
 @include card.core-styles;
-@include list.core-styles;
 @include checkbox.core-styles;
+@include dialog.core-styles;
 @include icon-button.core-styles;
+@include list.core-styles;
+@include theme.core-styles;
+@include snackbar.core-styles;
+@include typography.core-styles;
 
+// First-party includes
+@include events.core-styles;
+
+// Font imports
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Icons&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Sharp&display=block');
 
+// Main styles
 body {
   @include typography.base;
 
   background-color: #f8f8f8;
-  font-size: 16px;
+  font-size: variables.$font-size;
   margin: 0;
 }
 
-$gutter: 0.5em;
-$material-gutter: 1em;
-
-main {
-  margin: $gutter;
+address {
+  font-style: normal;
 }
 
-.day-list {
-  max-width: 45em;
-  margin: auto;
+.app-bar {
+  $exit-length: 50ms;
+  $enter-length: 150ms;
+  $enter-delay: $exit-length + 10ms;
 
-  &__day {
-    align-items: flex-start;
-    display: flex;
-    margin-bottom: 1.5em;
+  opacity: 1;
+  transition: animation.enter(opacity, $enter-length, $enter-delay);
+  visibility: visible;
+
+  &--hidden {
+    opacity: 0;
+    transition: animation.exit-temporary(opacity, $exit-length), visibility 0ms $exit-length;
+    visibility: hidden;
   }
 
-  &__date {
-    flex: 0 0 3em;
-    margin-right: 0.5em;
-    position: sticky;
-    text-align: center;
-    // top: 72px;
-    top: 0.5rem;
+  &--content-hideable > * {
+    opacity: 1;
+    transition: animation.enter(opacity, $enter-length, $enter-delay);
+    visibility: visible;
   }
 
-  &__name {
-    font-size: 1em;
-    margin: 0;
+  &--content-hidden > * {
+    opacity: 0;
+    transition: animation.exit-permanent(opacity, $exit-length), visibility 0ms $exit-length;
+    visibility: hidden;
   }
 
-  &__number {
-    font-size: 2em;
-    margin: 0;
-  }
-}
-
-.day-list .event-list {
-  flex: 1;
-}
-
-.event-list .event-card {
-  margin-bottom: $gutter;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.event-card {
-  display: flex;
-
-  &__color-bar {
-    $width: 0.5rem;
-
-    background-color: #404040;
-    min-width: $width;
-    width: $width;
-  }
-
-  &__main {
-    border-left-style: none;
-    flex: 1;
-  }
-
-  &__primary {
-    padding: $material-gutter;
-  }
-
-  &__overline {
-    margin: 0;
-  }
-
-  &__title {
-    margin: 0;
-  }
-
-  &__subtitle {
-    margin: 0;
-    margin-top: 0.5em;
-    opacity: 0.6;
-  }
-
-  &__divider {
-    margin: 0 $material-gutter;
-  }
-
-  &__job-header {
-    margin: 0 $material-gutter;
-    margin-top: $material-gutter;
-  }
-
-  &__job-list {
-    padding-top: 0;
+  &--contextual {
+    background-color: variables.$secondary;
   }
 }

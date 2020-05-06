@@ -1,0 +1,58 @@
+// Third-party imports
+@use '@material/top-app-bar';
+
+// First-party imports
+@use './event-card';
+@use './variables';
+
+// Main styles
+@mixin core-styles() {
+  @include event-card.core-styles;
+
+  .day-list {
+    $date-width: 3em;
+    margin: auto;
+    max-width: 40em;
+
+    &__day {
+      align-items: flex-start;
+      display: flex;
+      margin-bottom: $date-width / 2;
+    }
+
+    &__date {
+      flex: 0 1 $date-width;
+      margin: variables.$gutter;
+      position: sticky;
+      text-align: center;
+      top: top-app-bar.$row-height + variables.$gutter;
+      vertical-align: top;
+
+      @media (max-width: top-app-bar.$mobile-breakpoint) {
+        top: top-app-bar.$mobile-row-height + variables.$gutter;
+      }
+    }
+
+    &__name {
+      font-size: 1em;
+      margin: 0;
+    }
+
+    &__number {
+      font-size: 2em;
+      margin: 0;
+    }
+  }
+
+  .day-list .event-list {
+    display: inline-block;
+    flex: 1;
+    margin-top: variables.$gutter;
+    vertical-align: top;
+  }
+
+  .day-list .event-list .event-card {
+    margin-bottom: variables.$gutter;
+    margin-right: variables.$gutter;
+  }
+}
