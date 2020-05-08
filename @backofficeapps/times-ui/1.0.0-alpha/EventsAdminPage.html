@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: EventsPage</title>
+	<title>Documentation Class: EventsAdminPage</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -72,16 +72,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: EventsPage</h1>
+	<h1 class="page-title">Class: EventsAdminPage</h1>
 <section>
 
 <header>
     
         <h2>
-        EventsPage
+        EventsAdminPage
         </h2>
         
-            <div class="class-description">Logic for Events page.</div>
+            <div class="class-description">Logic for Events page admin view.</div>
         
     
 </header>
@@ -93,7 +93,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="EventsPage"><span class="type-signature"></span>new EventsPage(materialObjects)</h4>
+    <h4 class="name" id="EventsAdminPage"><span class="type-signature"></span>new EventsAdminPage(materialObjects)</h4>
     
     
 </dt>
@@ -101,7 +101,7 @@
 
     
     <div class="description">
-        Initializes events page.
+        Initializes events admin page.
     </div>
     
 
@@ -228,7 +228,7 @@
         <h3 class="subsection-title">Classes</h3>
 
         <dl>
-            <dt><a href="EventsPage.html">EventsPage</a></dt>
+            <dt><a href="EventsAdminPage.html">EventsAdminPage</a></dt>
             <dd></dd>
         </dl>
     
@@ -243,6 +243,310 @@
         <h3 class="subsection-title">Methods</h3>
 
         <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="assignmentAdded"><span class="type-signature"></span>assignmentAdded(jobId, workerId)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Records job assignment in job list.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>jobId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID of Job for assignment</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>workerId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID of Worker to assign</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="assignmentRemoved"><span class="type-signature"></span>assignmentRemoved(jobId, workerId)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Records job revoke in job list.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>jobId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID of Job for assignment</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>workerId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID of Worker to un-assign</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
             
 <hr>
 <dt>
@@ -313,212 +617,6 @@
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="confirmDialogClosingEvent"><span class="type-signature"></span>confirmDialogClosingEvent(event)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Handle closing event from confirm dialog.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Event</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Event from Material Design Dialog component</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="confirmJobs"><span class="type-signature"></span>confirmJobs()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Show confirm jobs dialog.
-    </div>
-    
-
-    
-
-    
-
-    
     
 
     
@@ -708,84 +806,6 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="deselectAllJobs"><span class="type-signature"></span>deselectAllJobs()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Deselect all selected jobs.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
     <h4 class="name" id="failSnackbarClosingEvent"><span class="type-signature"></span>failSnackbarClosingEvent(event)</h4>
     
     
@@ -794,7 +814,7 @@
 
     
     <div class="description">
-        Handle closing event from sign up fail snackbar.
+        Handle closing event from assignment fail snackbar.
     </div>
     
 
@@ -992,7 +1012,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="jobDeselected"><span class="type-signature"></span>jobDeselected(jobId)</h4>
+    <h4 class="name" id="jobAssignmentChange"><span class="type-signature"></span>jobAssignmentChange(jobId)</h4>
     
     
 </dt>
@@ -1000,7 +1020,7 @@
 
     
     <div class="description">
-        Records job deselection in job list.
+        Runs when a job assignment map changes.
     </div>
     
 
@@ -1052,7 +1072,7 @@
 
             
 
-            <td class="description last">Job ID that was deselected</td>
+            <td class="description last">ID of job changing</td>
         </tr>
 
     
@@ -1120,7 +1140,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="jobListChange"><span class="type-signature"></span>jobListChange()</h4>
+    <h4 class="name" id="jobRowHeaderClicked"><span class="type-signature"></span>jobRowHeaderClicked(jobRow, event)</h4>
     
     
 </dt>
@@ -1128,85 +1148,7 @@
 
     
     <div class="description">
-        Runs when job list is changed.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="jobSelected"><span class="type-signature"></span>jobSelected(jobId)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Records job selection in job list.
+        Handle event from clicking a job row header.
     </div>
     
 
@@ -1241,13 +1183,13 @@
 
         <tr>
             
-                <td class="name"><code>jobId</code></td>
+                <td class="name"><code>jobRow</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">Element</span>
 
 
 
@@ -1258,113 +1200,9 @@
 
             
 
-            <td class="description last">Job ID that was selected</td>
+            <td class="description last">Element of job row clicked</td>
         </tr>
 
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="listActionEvent"><span class="type-signature"></span>listActionEvent(event)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Handle event from MDCList.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
     
 
         <tr>
@@ -1375,7 +1213,7 @@
             <td class="type">
             
                 
-<span class="param-type">Event</span>
+<span class="param-type">MouseEvent</span>
 
 
 
@@ -1386,13 +1224,631 @@
 
             
 
-            <td class="description last">Event from Material Design List component</td>
+            <td class="description last">Mouse event from JavaScript</td>
         </tr>
 
     
     </tbody>
 </table>
 
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="resetAllChanges"><span class="type-signature"></span>resetAllChanges()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Resets all jobs to initial state of page
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="resetJobChanges"><span class="type-signature"></span>resetJobChanges(jobId)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Resets job to initial state of page
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>jobId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID of Job to reset</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="saveAssignments"><span class="type-signature"></span>saveAssignments(assignmentMap)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Save job assignments.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>assignmentMap</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Map.&lt;int, Set.&lt;int>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Set of job ids to sign up for</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="showAssignmentSnackbarEnd"><span class="type-signature"></span>showAssignmentSnackbarEnd()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Show end assignment snackbar.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="showAssignmentSnackbarFail"><span class="type-signature"></span>showAssignmentSnackbarFail(assignmentMap)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Show failed assignment snackbar.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>assignmentMap</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Map.&lt;int, Set.&lt;int>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Set of job ids that failed</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="showAssignmentSnackbarStart"><span class="type-signature"></span>showAssignmentSnackbarStart()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Show start assignment snackbar.
+    </div>
+    
+
+    
+
+    
+
+    
     
 
     
@@ -1532,418 +1988,6 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="showSignUpSnackbarEnd"><span class="type-signature"></span>showSignUpSnackbarEnd()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Show end signup snackbar.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="showSignUpSnackbarFail"><span class="type-signature"></span>showSignUpSnackbarFail(jobList)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Show failed signup snackbar.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>jobList</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Set.&lt;int></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Set of job ids that failed</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="showSignUpSnackbarStart"><span class="type-signature"></span>showSignUpSnackbarStart()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Show start signup snackbar.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="signUpJobs"><span class="type-signature"></span>signUpJobs(jobList)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Sign up for selected jobs.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>jobList</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Set.&lt;int></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Set of job ids to sign up for</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
     <h4 class="name" id="updateContextualAppBar"><span class="type-signature"></span>updateContextualAppBar()</h4>
     
     
@@ -1961,6 +2005,134 @@
     
 
     
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="workerListActionEvent"><span class="type-signature"></span>workerListActionEvent(event)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Handle event from worker MDCList.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>event</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Event</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Event from Material Design List component</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
     
@@ -2068,7 +2240,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a>
 	
-		on 2020-05-08T10:40:27+00:00
+		on 2020-05-08T10:40:26+00:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
