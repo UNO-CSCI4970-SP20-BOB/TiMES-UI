@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import axios from 'axios';
 import { MDCDialog } from '@material/dialog';
 import { MDCList } from '@material/list';
 import { MDCSnackbar } from '@material/snackbar';
@@ -294,22 +294,14 @@ export class EventsPage {
 
         const sentJobList = new Set(jobList);
 
-        $.ajax({
-            url: './actions',
-            method: 'POST',
-            context: this,
-            data: {
-                type: 'sign-up',
-                ids: Array.from(sentJobList)
-            },
-            success: function () {
+        axios
+            .post('./sign-up', Array.from(sentJobList))
+            .then(() => {
                 this.deselectAllJobs();
                 this.showSignUpSnackbarEnd();
-            },
-            error: function () {
+            }).catch(() => {
                 this.showSignUpSnackbarFail(sentJobList);
-            }
-        });
+            });
     }
 
     /**

@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import { MDCDialog } from '@material/dialog';
 import { MDCList } from '@material/list';
 import { MDCRipple } from '@material/ripple';
@@ -20,34 +19,49 @@ function init() {
 
     // Initialize Material Design objects
     const materialObjects = new Map();
-    $('.mdc-top-app-bar').each(function () {
-        const item = new MDCTopAppBar(this);
-        materialObjects.set(this, item);
-    });
-    $('.mdc-button, .mdc-card__primary-action')
-        .filter(':not(.mdc-snackbar__action, .mdc-snackbar__dismiss)')
-        .each(function () {
-            const item = new MDCRipple(this);
-            materialObjects.set(this, item);
+    document
+        .querySelectorAll('.mdc-top-app-bar')
+        .forEach(element => {
+            const item = new MDCTopAppBar(element);
+            materialObjects.set(element, item);
         });
-    $('.mdc-icon-button').each(function () {
-        const item = new MDCRipple(this);
-        item.unbounded = true;
-        materialObjects.set(this, item);
-    });
-    $('.mdc-list').each(function () {
-        const item = new MDCList(this);
-        materialObjects.set(this, item);
-    });
-    $('.mdc-dialog').each(function () {
-        const item = new MDCDialog(this);
-        materialObjects.set(this, item);
-    });
-    $('.mdc-snackbar').each(function () {
-        const item = new MDCSnackbar(this);
-        materialObjects.set(this, item);
-    });
-    console.log(materialObjects);
+    [...document.querySelectorAll('.mdc-button, .mdc-card__primary-action')]
+        .filter(element => {
+            return !(
+                element.classList.contains('no-auto-js')
+                || element.classList.contains('mdc-snackbar__action')
+                || element.classList.contains('mdc-snackbar__dismiss')
+            );
+        })
+        .forEach(element => {
+            const item = new MDCRipple(element);
+            materialObjects.set(element, item);
+        });
+    document
+        .querySelectorAll('.mdc-icon-button:not(.no-auto-js)')
+        .forEach(element => {
+            const item = new MDCRipple(element);
+            item.unbounded = true;
+            materialObjects.set(element, item);
+        });
+    document
+        .querySelectorAll('.mdc-list:not(.no-auto-js)')
+        .forEach(element => {
+            const item = new MDCList(element);
+            materialObjects.set(element, item);
+        });
+    document
+        .querySelectorAll('.mdc-dialog:not(.no-auto-js)')
+        .forEach(element => {
+            const item = new MDCDialog(element);
+            materialObjects.set(element, item);
+        });
+    document
+        .querySelectorAll('.mdc-snackbar:not(.no-auto-js)')
+        .forEach(element => {
+            const item = new MDCSnackbar(element);
+            materialObjects.set(element, item);
+        });
 
 
     // Check for page name
@@ -62,4 +76,14 @@ function init() {
     }
 }
 
-$(document).ready(init);
+/**
+ * Runs when page is ready.
+ */
+function pageReady() {
+    console.debug('pageReady()');
+    document.removeEventListener('DOMContentLoaded', pageReady);
+    window.removeEventListener('load', pageReady);
+    init();
+}
+document.addEventListener('DOMContentLoaded', pageReady);
+window.addEventListener('load', pageReady);
