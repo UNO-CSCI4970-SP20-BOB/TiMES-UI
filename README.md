@@ -20,3 +20,6 @@ This project uses [JSDoc] for JavaScript documentation generation. Documentation
 [Node.js]: https://nodejs.org/ "Node.js's Website"
 [gulp.js]: https://gulpjs.com/ "gulp.js's Website"
 [JSDoc]: https://jsdoc.app/ "JSDoc's Website"
+
+## Licensing
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
