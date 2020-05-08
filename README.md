@@ -22,4 +22,4 @@ This project uses [JSDoc] for JavaScript documentation generation. Documentation
 [JSDoc]: https://jsdoc.app/ "JSDoc's Website"
 
 ## Licensing
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+Protected Under Copyright &copy;2020 Back Office Boiz - Back Office Apps
