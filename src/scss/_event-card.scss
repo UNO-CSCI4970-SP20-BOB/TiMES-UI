@@ -5,6 +5,7 @@
 @mixin core-styles() {
   .event-card {
     display: flex;
+    flex-direction: row;
 
     &__color-bar {
       background-color: #404040;
@@ -31,17 +32,12 @@
       opacity: 0.6;
     }
 
-    &__divider {
-      margin: 0 variables.$material-gutter;
+    &__job-list-header {
+      margin: variables.$material-gutter variables.$material-gutter 0;
     }
+  }
 
-    &__job-header {
-      margin: 0 variables.$material-gutter;
-      margin-top: variables.$material-gutter;
-    }
-
-    &__job-list {
-      padding-top: 0;
-    }
+  .job-list {
+    padding-top: 0;
   }
 }

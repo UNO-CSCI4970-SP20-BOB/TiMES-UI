@@ -35,8 +35,8 @@
 @include dialog.core-styles;
 @include icon-button.core-styles;
 @include list.core-styles;
-@include theme.core-styles;
 @include snackbar.core-styles;
+@include theme.core-styles;
 @include typography.core-styles;
 
 // First-party includes
@@ -57,6 +57,10 @@ body {
 
 address {
   font-style: normal;
+}
+
+main {
+  display: block;
 }
 
 .app-bar {

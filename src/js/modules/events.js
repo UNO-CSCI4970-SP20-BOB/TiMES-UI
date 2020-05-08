@@ -12,16 +12,16 @@ const cssClasses = {
     APP_BAR_HIDDEN: 'app-bar--hidden',
     APP_BAR_CONTENT_HIDDEN: 'app-bar--content-hidden',
     EVENT_CARD_JOB_CHECKBOX: 'event-card__job-checkbox',
-    EVENT_CARD_JOB_LIST: 'event-card__job-list'
+    EVENT_CARD_JOB_LIST: 'job-list'
 };
 
 const cssIds = {
-    MAIN_APP_BAR: 'main-app-bar',
-    APP_BAR: 'events-contextual-app-bar',
-    APP_BAR_TITLE: 'events-contextual-app-bar-title',
-    APP_BAR_CONFIRM: 'events-contextual-app-bar-confirm',
+    CONTEXTUAL_APP_BAR: 'events-contextual-app-bar',
+    CONTEXTUAL_APP_BAR_TITLE: 'events-contextual-app-bar-title',
+    CONTEXTUAL_APP_BAR_CONFIRM: 'events-contextual-app-bar-confirm',
     DIALOG: 'events-confirm-dialog',
     DIALOG_CONTENT: 'events-confirm-dialog-content',
+    MAIN_APP_BAR: 'main-app-bar',
     SNACKBAR_SIGN_UP_START: 'events-snackbar-sign-up-start',
     SNACKBAR_SIGN_UP_END: 'events-snackbar-sign-up-end',
     SNACKBAR_SIGN_UP_FAIL: 'events-snackbar-sign-up-fail'
@@ -45,10 +45,7 @@ export class EventsPage {
     constructor(materialObjects) {
         console.debug('EventsPage: constructor(materialObjects)', materialObjects);
 
-        this.jobList = new Set();
-        this.contextualAppBarVisible = false;
-
-        materialObjects.forEach((value, key) => {
+        for (const [key, value] of materialObjects) {
             if (value instanceof MDCList && key.classList.contains(cssClasses.EVENT_CARD_JOB_LIST)) {
                 // Add listener to all MDCLists job lists on page
                 value.listen(MDCListStrings.ACTION_EVENT, this.listActionEvent.bind(this));
@@ -59,7 +56,7 @@ export class EventsPage {
                 this.mainAppBar = [key, value];
             }
 
-            if (value instanceof MDCTopAppBar && key.id === cssIds.APP_BAR) {
+            if (value instanceof MDCTopAppBar && key.id === cssIds.CONTEXTUAL_APP_BAR) {
                 // Keep track of events app bar
                 this.contextualAppBar = [key, value];
                 // Add listener to contextual MDCTopAppBar on page
@@ -91,7 +88,7 @@ export class EventsPage {
                 // Add listener to action event
                 value.listen(MDCSnackbarStrings.CLOSING_EVENT, this.failSnackbarClosingEvent.bind(this));
             }
-        });
+        }
 
         if (null == this.mainAppBar) {
             console.error('EventsPage: Missing Main App Bar');
@@ -100,7 +97,7 @@ export class EventsPage {
         if (null == this.contextualAppBar) {
             console.error('EventsPage: Missing Contextual App Bar');
         } else {
-            this.confirmButton = this.contextualAppBar[0].querySelector('#' + cssIds.APP_BAR_CONFIRM);
+            this.confirmButton = this.contextualAppBar[0].querySelector('#' + cssIds.CONTEXTUAL_APP_BAR_CONFIRM);
         }
 
         if (null == this.confirmButton) {
@@ -130,6 +127,8 @@ export class EventsPage {
         if (null == this.snackbarSignUpFail) {
             console.error('EventsPage: Missing Snackbar Sign Up Fail');
         }
+
+        this.jobList = new Set();
     }
 
     /**
@@ -141,10 +140,11 @@ export class EventsPage {
         const row = event.target.children[event.detail.index];
         const checkbox = row.querySelector('.' + cssClasses.EVENT_CARD_JOB_CHECKBOX);
 
+        const jobId = parseInt(checkbox.dataset.jobId);
         if (checkbox.checked) {
-            this.jobSelected(checkbox.id);
+            this.jobSelected(jobId);
         } else {
-            this.jobDeselected(checkbox.id);
+            this.jobDeselected(jobId);
         }
     }
 
@@ -172,7 +172,7 @@ export class EventsPage {
      * Runs when job list is changed.
      */
     jobListChange() {
-        console.debug('EventsPage: jobListChange()', this.jobList);
+        console.debug('EventsPage: jobListChange()');
         this.updateContextualAppBar();
     }
 
@@ -192,8 +192,8 @@ export class EventsPage {
             this.hideContextualAppBar();
         }
 
-        const contextualAppBarTitle = this.contextualAppBar[0].querySelector('#' + cssIds.APP_BAR_TITLE);
-        contextualAppBarTitle.innerHTML = displayNumber + ' ' + strings.SELECTED;
+        const contextualAppBarTitle = this.contextualAppBar[0].querySelector('#' + cssIds.CONTEXTUAL_APP_BAR_TITLE);
+        contextualAppBarTitle.innerText = displayNumber + ' ' + strings.SELECTED;
     }
 
     /**
@@ -201,11 +201,6 @@ export class EventsPage {
      */
     showContextualAppBar() {
         console.debug('EventsPage: showContextualAppBar()');
-        if (this.contextualAppBarVisible) {
-            return;
-        }
-
-        this.contextualAppBarVisible = true;
         this.contextualAppBar[0].classList.remove(cssClasses.APP_BAR_HIDDEN);
         this.mainAppBar[0].classList.add(cssClasses.APP_BAR_CONTENT_HIDDEN);
     }
@@ -215,11 +210,6 @@ export class EventsPage {
      */
     hideContextualAppBar() {
         console.debug('EventsPage: hideContextualAppBar()');
-        if (!this.contextualAppBarVisible) {
-            return;
-        }
-
-        this.contextualAppBarVisible = false;
         this.contextualAppBar[0].classList.add(cssClasses.APP_BAR_HIDDEN);
         this.mainAppBar[0].classList.remove(cssClasses.APP_BAR_CONTENT_HIDDEN);
     }
@@ -240,10 +230,11 @@ export class EventsPage {
     deselectAllJobs() {
         console.debug('EventsPage: deselectAllJobs()');
 
-        [].map.call(document.querySelectorAll('.' + cssClasses.EVENT_CARD_JOB_CHECKBOX + ':checked'), function (element) {
-            element.click();
-            return;
-        });
+        document
+            .querySelectorAll('.' + cssClasses.EVENT_CARD_JOB_CHECKBOX + ':checked')
+            .forEach(element => {
+                element.click();
+            });
     }
 
     /**
@@ -261,7 +252,7 @@ export class EventsPage {
     confirmJobs() {
         console.debug('EventsPage: confirmJobs()');
 
-        this.confirmDialogContent.innerHTML =
+        this.confirmDialogContent.innerText =
             strings.DIALOG_CONTENT_START
             + this.jobList.size
             + strings.DIALOG_CONTENT_END;
