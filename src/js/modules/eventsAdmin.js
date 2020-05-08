@@ -289,7 +289,7 @@ export class EventsAdminPage {
      */
     contextualAppBarNavigationEvent(event) {
         console.debug('EventsAdminPage: contextualAppBarEvent(event)', event);
-        this.resetAllChanges()
+        this.resetAllChanges();
     }
 
     /**
