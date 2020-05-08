@@ -288,7 +288,7 @@ export class EventsPage {
         axios
             .post('./sign-up', Array.from(sentJobList))
             .then(() => {
-                this.deselectAllJobs();
+                // this.deselectAllJobs();
                 this.showSignUpSnackbarEnd();
             }).catch(() => {
                 this.showSignUpSnackbarFail(sentJobList);
