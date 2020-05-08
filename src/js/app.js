@@ -5,9 +5,11 @@ import { MDCSnackbar } from '@material/snackbar';
 import { MDCTopAppBar } from '@material/top-app-bar';
 
 import { EventsPage } from './modules/events.js';
+import { EventsAdminPage } from './modules/eventsAdmin.js';
 
 const PAGE_MODULES = new Map();
 PAGE_MODULES.set('events', EventsPage);
+PAGE_MODULES.set('eventsAdmin', EventsAdminPage);
 
 /**
  * Initializes page and calls page specific code if needed.

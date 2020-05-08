@@ -1,3 +1,9 @@
+// Third-party imports
+@use '@material/animation';
+@use '@material/theme';
+@use '@material/rtl';
+@use '@material/list';
+
 // First-party imports
 @use './variables';
 
@@ -38,6 +44,52 @@
   }
 
   .job-list {
+    $exit-length: 100ms;
+    $enter-length: 300ms;
+
     padding-top: 0;
+
+    &__job {
+      transition: animation.exit-temporary(margin, $exit-length);
+    }
+
+    &__job-body {
+      @include rtl.reflexive-box(margin, left, list.$text-offset, '.mdc-list-group');
+      display: none;
+      overflow: hidden;
+      width: calc(100% - #{list.$text-offset} - #{list.$side-padding});
+    }
+
+    &__job--expanded {
+      margin: variables.$gutter 0;
+      transition: animation.enter(margin, $enter-length);
+    }
+
+    &__job--expanded &__job-body {
+      display: block;
+      overflow: visible;
+    }
+
+    &__job--change &__job-icon {
+      @include theme.prop(
+        color,
+        (
+          varname: --mdc-theme-secondary,
+          fallback: theme.$secondary,
+        )
+      );
+    }
+
+    &__worker-header {
+      margin: variables.$material-gutter variables.$material-gutter 0;
+    }
+  }
+
+  .mdc-list--one-line .mdc-list-item {
+    height: 52px;
+
+    &__text {
+      align-self: auto;
+    }
   }
 }

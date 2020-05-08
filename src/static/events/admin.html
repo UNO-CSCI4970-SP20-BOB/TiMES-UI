@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Events - TiMES</title>
+
+    <link href="../style.css" type="text/css" rel="stylesheet">
+
+    <script src="../script.js"></script>
+    <script>
+        var pageName = 'eventsAdmin';
+    </script>
+</head>
+
+<body>
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed app-bar app-bar--content-hideable" id="main-app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons-sharp mdc-top-app-bar__navigation-icon mdc-icon-button"
+                    aria-label="Navigation Menu">menu</button>
+                <h1 class="mdc-top-app-bar__title">Events</h1>
+            </section>
+        </div>
+    </header>
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed app-bar app-bar--contextual app-bar--hidden"
+        id="events-contextual-app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons-sharp mdc-top-app-bar__navigation-icon mdc-icon-button"
+                    aria-label="Clear selection">close</button>
+                <span class="mdc-top-app-bar__title" id="events-contextual-app-bar-title">1 assignments changed</span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <button class="material-icons-sharp mdc-top-app-bar__action-item mdc-icon-button"
+                    aria-label="Save job changes" aria-haspopup="true" aria-expanded="false"
+                    id="events-contextual-app-bar-confirm">save</button>
+            </section>
+        </div>
+    </header>
+
+    <div class="mdc-top-app-bar--fixed-adjust"></div>
+
+    <main class="day-list">
+        <article class="day-list__day" aria-labelledby="date-2020-05-31__month date-2020-05-31__day">
+            <time class="day-list__date" datetime="2020-05-31">
+                <span class="day-list__name mdc-typography--subtitle2" id="date-2020-05-31__month">MAY</span>
+
+                <span class="day-list__number mdc-typography--headline5" id="date-2020-05-31__day">31</span>
+            </time>
+
+            <div class="event-list">
+                <article class="event-card mdc-card mdc-card--outlined" aria-labelledby="event1__title">
+                    <div class="event-card__color-bar" style="background-color: #ff8f00;"></div>
+
+                    <div class="event-card__main">
+                        <div class="event-card__primary">
+                            <span class="mdc-typography--overline" id="event1__type">Basketball</span>
+
+                            <h1 class="event-card__title mdc-typography--headline5" id="event1__title">
+                                Girls Freshman Game vs. Bellevue West Senior High School
+                            </h1>
+
+                            <span class="mdc-typography--subtitle1" id="event1__time">
+                                <time datetime="2020-05-31T22:30:00.000Z">5:30 PM</time> -
+                                <time datetime="2020-05-31T23:30:00.000Z">6:30 PM</time>
+                            </span>
+
+                            <address class="event-card__subtitle mdc-typography--subtitle2" id="event1__location">
+                                Millard West High School
+                            </address>
+                        </div>
+
+                        <hr class="mdc-list-divider mdc-list-divider--padded" />
+
+                        <div class="event-card__job-section">
+                            <h2 class="event-card__job-list-header mdc-typography--subtitle1">Jobs</h2>
+
+                            <ul class="job-list no-auto-js mdc-list mdc-list--two-line">
+                                <li class="job-list__job" id="job1" data-job-id="1" data-job-name="Scoreboard">
+                                    <div class="mdc-list-item job-list__job-header">
+                                        <span class="job-list__job-icon mdc-list-item__graphic material-icons-sharp">
+                                            assignment_turned_in
+                                        </span>
+
+                                        <span class="mdc-list-item__text" id="job2__title">
+                                            <span
+                                                class="job-list__job-row-title mdc-list-item__primary-text">Scoreboard:
+                                                User 2</span>
+                                            <span class="mdc-list-item__secondary-text">3 Signed Up</span>
+                                        </span>
+
+                                        <i
+                                            class="job-list__job-row-icon mdc-list-item__meta material-icons material-icons-sharp">
+                                            expand_more
+                                        </i>
+                                    </div>
+
+                                    <div class="job-list__job-body">
+                                        <hr class="mdc-list-divider" />
+
+                                        <h2 class="job-list__worker-header mdc-typography--subtitle1">
+                                            Assigned Worker
+                                        </h2>
+
+                                        <ul class="job-list__worker-list mdc-list mdc-list--one-line" role="group"
+                                            aria-label="List of selectable workers">
+                                            <li class="mdc-list-item" role="checkbox" aria-checked="false"
+                                                aria-labelledby="job1-worker1__name" tabIndex="0">
+                                                <div class="mdc-list-item__graphic">
+                                                    <div class="mdc-checkbox">
+                                                        <input type="checkbox"
+                                                            class="job-list__worker-checkbox mdc-checkbox__native-control"
+                                                            id="job1-worker1" data-job-id="1" data-worker-id="1"
+                                                            data-worker-name="User 1" />
+
+                                                        <div class="mdc-checkbox__background">
+                                                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                                    d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                            </svg>
+
+                                                            <div class="mdc-checkbox__mixedmark"></div>
+                                                        </div>
+
+                                                        <div class="mdc-checkbox__ripple"></div>
+                                                    </div>
+                                                </div>
+
+                                                <label class="mdc-list-item__text" id="job1-worker1__name"
+                                                    for="job1-worker1">
+                                                    User 1
+                                                </label>
+                                            </li>
+
+                                            <li class="mdc-list-item" role="checkbox" aria-checked="true"
+                                                aria-labelledby="job1-worker2__name" tabIndex="0">
+                                                <div class="mdc-list-item__graphic">
+                                                    <div class="mdc-checkbox">
+                                                        <input type="checkbox"
+                                                            class="job-list__worker-checkbox mdc-checkbox__native-control"
+                                                            id="job1-worker2" data-job-id="1" data-worker-id="2"
+                                                            data-worker-name="User 2" checked />
+
+                                                        <div class="mdc-checkbox__background">
+                                                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                                    d="M1.73,12.91 8.1,19.28 22.79,4.59">
+                                                                </path>
+                                                            </svg>
+
+                                                            <div class="mdc-checkbox__mixedmark"></div>
+                                                        </div>
+
+                                                        <div class="mdc-checkbox__ripple"></div>
+                                                    </div>
+                                                </div>
+
+                                                <label class="mdc-list-item__text" id="job1-worker2__name"
+                                                    for="job1-worker2">
+                                                    User 2
+                                                </label>
+                                            </li>
+
+                                            <li class="mdc-list-item" role="checkbox" aria-checked="false"
+                                                aria-labelledby="job1-worker3__name" tabIndex="0">
+                                                <div class="mdc-list-item__graphic">
+                                                    <div class="mdc-checkbox">
+                                                        <input type="checkbox"
+                                                            class="job-list__worker-checkbox mdc-checkbox__native-control"
+                                                            id="job1-worker3" data-job-id="1" data-worker-id="3"
+                                                            data-worker-name="User 3" />
+
+                                                        <div class="mdc-checkbox__background">
+                                                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                                    d="M1.73,12.91 8.1,19.28 22.79,4.59">
+                                                                </path>
+                                                            </svg>
+
+                                                            <div class="mdc-checkbox__mixedmark"></div>
+                                                        </div>
+
+                                                        <div class="mdc-checkbox__ripple"></div>
+                                                    </div>
+                                                </div>
+
+                                                <label class="mdc-list-item__text" id="job1-worker3__name"
+                                                    for="job1-worker3">
+                                                    User 3
+                                                </label>
+                                            </li>
+                                        </ul>
+
+                                        <hr class="mdc-list-divider" />
+
+                                        <div class="mdc-card__actions">
+                                            <div class="mdc-card__action-icons">
+                                                <button
+                                                    class="material-icons-sharp mdc-icon-button mdc-card__action mdc-card__action--icon"
+                                                    title="Delete Job">
+                                                    delete
+                                                </button>
+                                                <button
+                                                    class="material-icons-sharp mdc-icon-button mdc-card__action mdc-card__action--icon"
+                                                    title="Edit Job">
+                                                    edit
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="job-list__job" id="job2" data-job-id="2" data-job-name="Tickets">
+                                    <div class="mdc-list-item job-list__job-header">
+                                        <span class="job-list__job-icon mdc-list-item__graphic material-icons-sharp">
+                                            assignment
+                                        </span>
+
+                                        <span class="mdc-list-item__text" id="job1__title">
+                                            <span
+                                                class="job-list__job-row-title mdc-list-item__primary-text">Tickets</span>
+                                            <span class="mdc-list-item__secondary-text">3 Signed Up</span>
+                                        </span>
+
+                                        <i
+                                            class="job-list__job-row-icon mdc-list-item__meta material-icons material-icons-sharp">
+                                            expand_more
+                                        </i>
+                                    </div>
+
+                                    <div class="job-list__job-body">
+                                        <hr class="mdc-list-divider" />
+
+                                        <h2 class="job-list__worker-header mdc-typography--subtitle1">Assigned Worker
+                                        </h2>
+
+                                        <ul class="job-list__worker-list mdc-list mdc-list--one-line" role="group"
+                                            aria-label="List of selectable workers">
+                                            <li class="mdc-list-item" role="checkbox" aria-checked="false"
+                                                aria-labelledby="job2-worker1__name" tabIndex="0">
+                                                <div class="mdc-list-item__graphic">
+                                                    <div class="mdc-checkbox">
+                                                        <input type="checkbox"
+                                                            class="job-list__worker-checkbox mdc-checkbox__native-control"
+                                                            id="job2-worker1" data-job-id="2" data-worker-id="1"
+                                                            data-worker-name="User 1" />
+
+                                                        <div class="mdc-checkbox__background">
+                                                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                                    d="M1.73,12.91 8.1,19.28 22.79,4.59">
+                                                                </path>
+                                                            </svg>
+
+                                                            <div class="mdc-checkbox__mixedmark"></div>
+                                                        </div>
+
+                                                        <div class="mdc-checkbox__ripple"></div>
+                                                    </div>
+                                                </div>
+
+                                                <label class="mdc-list-item__text" id="job2-worker1__name"
+                                                    for="job2-worker1">
+                                                    User 1
+                                                </label>
+                                            </li>
+
+                                            <li class="mdc-list-item" role="checkbox" aria-checked="false"
+                                                aria-labelledby="job2-worker2__name" tabIndex="0">
+                                                <div class="mdc-list-item__graphic">
+                                                    <div class="mdc-checkbox">
+                                                        <input type="checkbox"
+                                                            class="job-list__worker-checkbox mdc-checkbox__native-control"
+                                                            id="job2-worker2" data-job-id="2" data-worker-id="2"
+                                                            data-worker-name="User 2" />
+
+                                                        <div class="mdc-checkbox__background">
+                                                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                                    d="M1.73,12.91 8.1,19.28 22.79,4.59">
+                                                                </path>
+                                                            </svg>
+
+                                                            <div class="mdc-checkbox__mixedmark"></div>
+                                                        </div>
+
+                                                        <div class="mdc-checkbox__ripple"></div>
+                                                    </div>
+                                                </div>
+
+                                                <label class="mdc-list-item__text" id="job2-worker2__name"
+                                                    for="job2-worker2">
+                                                    User 2
+                                                </label>
+                                            </li>
+
+                                            <li class="mdc-list-item" role="checkbox" aria-checked="false"
+                                                aria-labelledby="job2-worker3__name" tabIndex="0">
+                                                <div class="mdc-list-item__graphic">
+                                                    <div class="mdc-checkbox">
+                                                        <input type="checkbox"
+                                                            class="job-list__worker-checkbox mdc-checkbox__native-control"
+                                                            id="job2-worker3" data-job-id="2" data-worker-id="3"
+                                                            data-worker-name="User 3" />
+
+                                                        <div class="mdc-checkbox__background">
+                                                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                                    d="M1.73,12.91 8.1,19.28 22.79,4.59">
+                                                                </path>
+                                                            </svg>
+
+                                                            <div class="mdc-checkbox__mixedmark"></div>
+                                                        </div>
+
+                                                        <div class="mdc-checkbox__ripple"></div>
+                                                    </div>
+                                                </div>
+
+                                                <label class="mdc-list-item__text" id="job2-worker3__name"
+                                                    for="job2-worker3">
+                                                    User 3
+                                                </label>
+                                            </li>
+                                        </ul>
+
+                                        <hr class="mdc-list-divider" />
+
+                                        <div class="mdc-card__actions">
+                                            <div class="mdc-card__action-icons">
+                                                <button
+                                                    class="material-icons-sharp mdc-icon-button mdc-card__action mdc-card__action--icon"
+                                                    title="Delete Job">delete</button>
+                                                <button
+                                                    class="material-icons-sharp mdc-icon-button mdc-card__action mdc-card__action--icon"
+                                                    title="Edit Job">edit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="job-list__job" id="job3" data-job-id="3" data-job-name="Film">
+                                    <div class="mdc-list-item job-list__job-header">
+                                        <span class="job-list__job-icon mdc-list-item__graphic material-icons-sharp">
+                                            assignment
+                                        </span>
+
+                                        <span class="mdc-list-item__text" id="job-3__title">
+                                            <span
+                                                class="job-list__job-row-title mdc-list-item__primary-text">Film</span>
+                                            <span class="mdc-list-item__secondary-text">1 Signed Up</span>
+                                        </span>
+
+                                        <i
+                                            class="job-list__job-row-icon mdc-list-item__meta material-icons material-icons-sharp">
+                                            expand_more
+                                        </i>
+                                    </div>
+
+                                    <div class="job-list__job-body">
+                                        <hr class="mdc-list-divider" />
+
+                                        <h2 class="job-list__worker-header mdc-typography--subtitle1">Assigned Worker
+                                        </h2>
+
+                                        <ul class="job-list__worker-list mdc-list mdc-list--one-line" role="group"
+                                            aria-label="List of selectable workers">
+                                            <li class="mdc-list-item" role="checkbox" aria-checked="false"
+                                                aria-labelledby="job3-worker1__name" tabIndex="0">
+                                                <div class="mdc-list-item__graphic">
+                                                    <div class="mdc-checkbox">
+                                                        <input type="checkbox"
+                                                            class="job-list__worker-checkbox mdc-checkbox__native-control"
+                                                            id="job3-worker1" data-job-id="3" data-worker-id="1"
+                                                            data-worker-name="User 1" />
+
+                                                        <div class="mdc-checkbox__background">
+                                                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                                    d="M1.73,12.91 8.1,19.28 22.79,4.59">
+                                                                </path>
+                                                            </svg>
+
+                                                            <div class="mdc-checkbox__mixedmark"></div>
+                                                        </div>
+
+                                                        <div class="mdc-checkbox__ripple"></div>
+                                                    </div>
+                                                </div>
+
+                                                <label class="mdc-list-item__text" id="job3-worker1__name"
+                                                    for="job3-worker1">
+                                                    User 1
+                                                </label>
+                                            </li>
+                                        </ul>
+
+                                        <hr class="mdc-list-divider" />
+
+                                        <div class="mdc-card__actions">
+                                            <div class="mdc-card__action-icons">
+                                                <button
+                                                    class="material-icons-sharp mdc-icon-button mdc-card__action mdc-card__action--icon"
+                                                    title="Delete Job">delete</button>
+                                                <button
+                                                    class="material-icons-sharp mdc-icon-button mdc-card__action mdc-card__action--icon"
+                                                    title="Edit Job">edit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <hr class="mdc-list-divider" />
+
+                        <div class="mdc-card__actions">
+                            <div class="mdc-card__action-icons">
+                                <button
+                                    class="material-icons-sharp mdc-icon-button mdc-card__action mdc-card__action--icon"
+                                    title="Delete Event">delete</button>
+                                <button
+                                    class="material-icons-sharp mdc-icon-button mdc-card__action mdc-card__action--icon"
+                                    title="Edit Event">edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </article>
+    </main>
+
+    <div class="mdc-dialog" id="events-confirm-dialog">
+        <div class="mdc-dialog__container">
+            <div class="mdc-dialog__surface" role="alertdialog" aria-modal="true"
+                aria-labelledby="events-confirm-dialog-title" aria-describedby="events-confirm-dialog-content">
+                <h1 class="mdc-dialog__title" id="events-confirm-dialog-title">Confirm Sign Up?</h1>
+
+                <div class="mdc-dialog__content" id="events-confirm-dialog-content"></div>
+
+                <div class="mdc-dialog__actions">
+                    <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close">
+                        <div class="mdc-button__ripple"></div>
+                        <span class="mdc-button__label">Cancel</span>
+                    </button>
+                    <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="confirm"
+                        data-mdc-dialog-initial-focus>
+                        <div class="mdc-button__ripple"></div>
+                        <span class="mdc-button__label">Sign Up</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <div class="mdc-snackbar" id="events-snackbar-assignment-start">
+        <div class="mdc-snackbar__surface">
+            <div class="mdc-snackbar__label" role="status" aria-live="polite">
+                Saving assignments...
+            </div>
+        </div>
+    </div>
+
+    <div class="mdc-snackbar" id="events-snackbar-assignment-end">
+        <div class="mdc-snackbar__surface">
+            <div class="mdc-snackbar__label" role="status" aria-live="polite">
+                Saved assignments.
+            </div>
+        </div>
+    </div>
+
+    <div class="mdc-snackbar" id="events-snackbar-assignment-fail">
+        <div class="mdc-snackbar__surface">
+            <div class="mdc-snackbar__label" role="status" aria-live="polite">
+                Saving assignments failed.
+            </div>
+
+            <div class="mdc-snackbar__actions">
+                <button type="button" class="mdc-button mdc-snackbar__action">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Retry</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
