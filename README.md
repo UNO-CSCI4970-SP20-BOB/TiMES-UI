@@ -20,7 +20,7 @@ This project uses [JSDoc] for JavaScript documentation generation. Documentation
 
 Protected Under Copyright &copy;2020 Back Office Boiz - Back Office Apps
 
-[TiMES]: https://github.com/UNO-CSCI4970-SP20-BOB/TiMES "TiMES Repository"
+[TiMES]: https://github.com/backofficeapps/TiMES "TiMES Repository"
 [npm]: https://www.npmjs.com/ "npm's Website"
 [Node.js]: https://nodejs.org/ "Node.js's Website"
 [gulp.js]: https://gulpjs.com/ "gulp.js's Website"
